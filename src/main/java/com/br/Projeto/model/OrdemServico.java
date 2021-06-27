@@ -4,10 +4,17 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
 @Entity
 public class OrdemServico {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long codigo;
 	
 	@Column
 	private Date data;
@@ -63,6 +70,16 @@ public class OrdemServico {
 	public void setMedico(Medico medico) {
 		this.medico = medico;
 	}
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
+	
+	
 	
 	
 

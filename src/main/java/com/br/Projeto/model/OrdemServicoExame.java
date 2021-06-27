@@ -2,10 +2,17 @@ package com.br.Projeto.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
 @Entity
 public class OrdemServicoExame {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long codigo;
 	
 	@JoinColumn
 	@Column
@@ -40,6 +47,14 @@ public class OrdemServicoExame {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 	
 	
